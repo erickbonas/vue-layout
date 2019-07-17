@@ -13,6 +13,8 @@ function generateConfig() {
 	};
 
 	return {
+		mode: "development",
+		target: "node",
 		entry: {
 			'layout-buefy-base': './src/buefy-base/index.js',
 		},
