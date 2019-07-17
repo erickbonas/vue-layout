@@ -5,5 +5,17 @@
   "main": "dist/index.js",
   "license": "MIT",
   "repository": "https://github.com/erickbonas/vue-layout.git",
-  "author": "Erick Bello <erick.bonas@gmail.com>"
+  "author": "Erick Bello <erick.bonas@gmail.com>",
+  "devDependencies": {
+    "css-loader": "^3.0.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.12.0",
+    "pug": "^2.0.4",
+    "pug-plain-loader": "^1.0.0",
+    "sass-loader": "^7.1.0",
+    "vue": "^2",
+    "vue-loader": "^15.7.0",
+    "webpack": "^4.36.1",
+    "webpack-cli": "^3.3.6"
+  }
 }
