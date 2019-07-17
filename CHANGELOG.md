@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2](https://github.com/erickbonas/vue-layout/compare/v0.0.1...v0.0.2) (2019-07-17)
+
+
+### Bug Fixes
+
+* Tirado mussun ipsom ([0c14454](https://github.com/erickbonas/vue-layout/commit/0c14454))
+
+
+
 ### 0.0.1 (2019-07-17)
 
 
