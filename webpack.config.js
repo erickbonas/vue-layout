@@ -2,7 +2,6 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
-
 function generateConfig() {
 	const babelLoader = {
 		loader: 'babel-loader',
@@ -13,8 +12,8 @@ function generateConfig() {
 	};
 
 	return {
-		mode: "development",
-		target: "node",
+		mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
+		target: 'node',
 		entry: {
 			'layout-buefy-base': './src/buefy-base/index.js',
 		},
@@ -70,12 +69,11 @@ function generateConfig() {
 		plugins: [
 			new VueLoaderPlugin(),
 			new MiniCssExtractPlugin({
-				filename: '[name].min.css',
+				filename: '[name].css',
 			}),
 		],
-		externals: {
-		},
+		externals: {},
 	};
-};
+}
 
 module.exports = generateConfig();

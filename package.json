@@ -7,6 +7,7 @@
 	"repository": "https://github.com/erickbonas/vue-layout.git",
 	"author": "Erick Bello <erick.bonas@gmail.com>",
 	"devDependencies": {
+		"cross-env": "^5.2.0",
 		"css-loader": "^3.0.0",
 		"mini-css-extract-plugin": "^0.8.0",
 		"node-sass": "^4.12.0",
@@ -30,7 +31,7 @@
 	"scripts": {
 		"clean": "rimraf dist",
 		"build": "webpack",
-    "prepack": "run-s clean build",
-    "release": "standard-version"
+		"prepack": "cross-env NODE_ENV=production run-s clean build",
+		"release": "standard-version"
 	}
 }
