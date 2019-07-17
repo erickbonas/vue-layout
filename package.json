@@ -1,0 +1,9 @@
+{
+  "name": "@bonas/vue-layout",
+  "version": "0",
+  "description": "Componente básico de layout",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "repository": "https://github.com/erickbonas/vue-layout.git",
+  "author": "Erick Bello <erick.bonas@gmail.com>"
+}
