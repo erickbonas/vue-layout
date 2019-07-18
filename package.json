@@ -1,6 +1,6 @@
 {
 	"name": "@bonas/vue-layout",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Componente básico de layout",
 	"main": "dist/index.js",
 	"license": "MIT",
@@ -27,8 +27,7 @@
 		"webpack": "^4.36.1",
 		"webpack-cli": "^3.3.6"
 	},
-	"dependencies": {
-	},
+	"dependencies": {},
 	"scripts": {
 		"clean": "rimraf dist",
 		"build": "webpack",
