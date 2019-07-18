@@ -1,5 +1,6 @@
 <template lang="pug">
 .vue-layout(:class="layoutClasses")
+	.vue-layout__overlay(@click="toggleSideNav")
 	aside.vue-layout__sidenav
 		.vue-layout__sidenav__logo
 			slot(name="logo")
@@ -8,7 +9,7 @@
 				template(v-for="item in menuItems")
 					b-menu-list
 						template(v-if="item.children")
-							b-menu-item(:icon="item.icon" v-bind="item.props")
+							b-menu-item(:icon="item.icon" v-bind="item.props" animation="menu-item")
 								template(slot='label', slot-scope='props')
 									| {{item.label}}
 									b-icon.is-pulled-right(:icon="props.expanded ? 'menu-down' : 'menu-up'")
@@ -68,6 +69,16 @@ export default {
 $layout-width: 256px;
 .vue-layout {
 }
+.vue-layout__overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 99;
+	display: none;
+	background-color: rgba(0, 0, 0, 0.2);
+}
 .vue-layout__sidenav {
 	position: fixed;
 	overflow-y: auto;
@@ -81,6 +92,21 @@ $layout-width: 256px;
 		align-items: center;
 		justify-content: center;
 		min-height: 5rem;
+	}
+	/deep/ {
+		.menu-item-enter-active,
+		.menu-item-leave-active {
+			transition: max-height 0.15s;
+			overflow: hidden;
+		}
+		.menu-item-enter,
+		.menu-item-leave-active {
+			max-height: 0;
+		}
+		.menu-item-leave,
+		.menu-item-enter-active {
+			max-height: 128px;
+		}
 	}
 }
 .vue-layout__main {
@@ -98,9 +124,14 @@ $layout-width: 256px;
 		.vue-layout__sidenav {
 			left: 0;
 		}
+		.vue-layout__overlay {
+			display: block;
+		}
 	}
 	.vue-layout__sidenav {
-		left: -$layout-width;
+		box-shadow: 2px 0 4px 2px rgba(0, 0, 0, 0.1);
+		transition: left 0.15s;
+		left: -$layout-width - 8px;
 	}
 	.vue-layout__main {
 		padding-left: 0;
