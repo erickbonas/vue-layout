@@ -36,7 +36,9 @@
 					<span aria-hidden="true"></span>
 				</a>
 			.navbar-menu
+				slot(name="navbar-menu")
 			.navbar-end
+				slot(name="navbar-end")
 		.vue-layout__content
 			slot
 </template>
@@ -94,6 +96,13 @@ $layout-width: 256px;
 		min-height: 5rem;
 	}
 	/deep/ {
+		.menu-list {
+			line-height: 2rem;
+			a.is-active {
+				background-color: rgba(0, 0, 0, 0.2);
+				color: #4a4a4a;
+			}
+		}
 		.menu-item-enter-active,
 		.menu-item-leave-active {
 			transition: max-height 0.15s;
